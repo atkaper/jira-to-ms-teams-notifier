@@ -19,7 +19,7 @@ Configure channels (webhooks) for MS-Teams in the ```transform-jira-to-ms-teams.
 
 To find the value to be used, you need to create a Channel in Teams, and configure an "Incoming Webhook" Connector. You copy the URL from there, and just use the "path" (the part without "https://outlook.office.com" as value in the ```CustomProperties``` section.
 
-## Run tranformation test
+## Run transformation test
 
 Use the ```local-single-transform-test.sh``` file to run a single message transformation test. It starts the docker image in debug mode, takes the example-jira-data.json message, and sends it to the container in an "echo" mode. The resulting json (suitable for teams), is echoed back. You can use this to tweak the transform script if needed. The result json can be copied to a microsoft message test playground. The playground url will be shown on screen (Note: the playground preview style is not the same as the real MS-Teams).
 
