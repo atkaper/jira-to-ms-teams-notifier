@@ -1,0 +1,89 @@
+{
+  "Version": "1.0",
+  "Name": "Send_Jira_To_MsTeams",
+  "Info": "Tranform jira ticket json to ms-teams MessageCard json",
+  "Active": true,
+  "Match": null,
+  "IsMatchByExample": false,
+  "TerminateOnMatch": true,
+  "CustomProperties": {
+    "SRE": "/webhook/00-some-data-00@00-some-more-hex-codes-00/IncomingWebhook/00-channel-id-sre-00/00-final-numbers-00",
+    "APT": "/webhook/00-some-data-00@00-some-more-hex-codes-00/IncomingWebhook/00-channel-id-apt-00/00-final-numbers-00",
+    "HP": "/webhook/00-some-data-00@00-some-more-hex-codes-00/IncomingWebhook/00-channel-id-hp-00/00-final-numbers-00",
+    "default": "/webhook/00-some-data-00@00-some-more-hex-codes-00/IncomingWebhook/00-channel-id-others-00/00-final-numbers-00"
+  },
+  "Transformations": {
+    "project": {
+      "Transformation": {
+        "{{/}}": "{{regex('{{/issue/key}}', '[^-]+')}}"
+      },
+      "IsTransformationByExample": false
+    },
+    "webhook": {
+      "Transformation": {
+        "{{/}}": "{{prop('{{ifte('{{propexists('{{transform('project')}}')}}','{{transform('project')}}','default')}}')}}"
+      },
+      "IsTransformationByExample": false
+    },
+    "issueUrl": {
+      "Transformation": {
+        "{{/}}": "{{regex('{{/issue/self}}', 'https?://[^/]+')}}/browse/{{/issue/key}}"
+      },
+      "IsTransformationByExample": false
+    },
+    "partialDescription": {
+      "Transformation": {
+        "{{/}}": "{{js('r=(txt.length<=len)?txt:(txt.slice(0,len)+\"...\")','r','txt','{{/issue/fields/description}}','len','500')}}"
+      },
+      "IsTransformationByExample": false
+    }
+  },
+  "Transformation": {
+    "@type": "MessageCard",
+    "@context": "http://schema.org/extensions",
+    "themeColor": "2DC72D",
+    "summary": "{{/issue/key}}: {{/issue/fields/summary}}",
+    "title": "{{/issue/key}}: {{/issue/fields/summary}}",
+    "potentialAction": [
+      {
+        "@type": "OpenUri",
+        "name": "Show Ticket",
+        "targets": [
+          {
+            "os": "default",
+            "uri": "{{transform('issueUrl')}}"
+          }
+        ]
+      }
+    ],
+    "sections": [
+      {
+        "facts": [
+          {
+            "name": "Created By:",
+            "value": "{{/user/displayName}}"
+          },
+          {
+            "name": "Priority:",
+            "value": "{{/issue/fields/priority/name}}"
+          },
+          {
+            "name": "Labels:",
+            "value": "{{string('{{/issue/fields/labels}}', ',')}}"
+          }
+        ],
+        "text": "{{transform('partialDescription')}}"
+      }
+    ]
+  },
+  "IsTransformationByExample": true,
+  "Path": "{{transform('webhook')}}",
+  "Verb": "POST",
+  "Endpoint": "https://outlook.office.com/",
+  "Protocol": "http",
+  "HttpHeaders": {
+    "X-Jira-Issue": "{{/issue/key}}",
+    "X-B3-TraceId": "{{traceid()}}",
+    "User-Agent": "EEL - Send_Jira_To_MsTeams"
+  }
+}

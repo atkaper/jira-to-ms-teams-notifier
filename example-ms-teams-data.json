@@ -1,0 +1,38 @@
+{
+  "@type": "MessageCard",
+  "@context": "http://schema.org/extensions",
+  "themeColor": "2DC72D",
+  "summary": "SBX-48: Test ms-teams chat notifier",
+  "title": "SBX-48: Test ms-teams chat notifier",
+  "potentialAction": [
+    {
+      "@type": "OpenUri",
+      "name": "Show Ticket",
+      "targets": [
+        {
+          "os": "default",
+          "uri": "https://jira.yours3rver.nl/browse/SBX-48"
+        }
+      ]
+    }
+  ],
+  "sections": [
+    {
+      "facts": [
+        {
+          "name": "Created By:",
+          "value": "Thijs Kaper"
+        },
+        {
+          "name": "Priority:",
+          "value": "Major"
+        },
+        {
+          "name": "Labels:",
+          "value": "UI, dialogue, move"
+        }
+      ],
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut leo ac nisl malesuada lobortis. Nam bibendum, nunc at faucibus blandit, turpis purus tincidunt mauris, vel vulputate turpis ipsum eu arcu.\r\n\r\nNullam lobortis nec ante bibendum tristique. Aliquam sem ligula, tempor quis dignissim at, semper et tellus. Sed ornare tempus tristique. Quisque eu ante a risus convallis placerat. Nulla pellentesque tincidunt enim ac ultrices. Vivamus imperdiet neque pretium nulla ultricies blandit a a..."
+    }
+  ]
+}

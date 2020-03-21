@@ -1,0 +1,177 @@
+{
+  "issue": {
+    "fields": {
+      "aggregateprogress": {
+        "progress": 0,
+        "total": 0
+      },
+      "aggregatetimeestimate": null,
+      "aggregatetimeoriginalestimate": null,
+      "aggregatetimespent": null,
+      "assignee": null,
+      "attachment": [],
+      "comment": {
+        "comments": [],
+        "maxResults": 0,
+        "startAt": 0,
+        "total": 0
+      },
+      "components": [],
+      "created": "2020-03-12T12:00:21.086+0000",
+      "creator": {
+        "active": true,
+        "avatarUrls": {
+          "16x16": "https://jira.yours3rver.nl/secure/useravatar?size=xsmall&ownerId=thijs.kaper&avatarId=12345",
+          "24x24": "https://jira.yours3rver.nl/secure/useravatar?size=small&ownerId=thijs.kaper&avatarId=12345",
+          "32x32": "https://jira.yours3rver.nl/secure/useravatar?size=medium&ownerId=thijs.kaper&avatarId=12345",
+          "48x48": "https://jira.yours3rver.nl/secure/useravatar?ownerId=thijs.kaper&avatarId=12345"
+        },
+        "displayName": "Thijs Kaper",
+        "emailAddress": "thijs.kaper@yours3rver.nl",
+        "key": "thijs.kaper",
+        "name": "thijs.kaper",
+        "self": "https://jira.yours3rver.nl/rest/api/2/user?username=thijs.kaper",
+        "timeZone": "Europe/Amsterdam"
+      },
+      "customfield_10000": null,
+      "customfield_10003": null,
+      "customfield_10100": null,
+      "customfield_10400": "9223372036854775807",
+      "customfield_10401": null,
+      "customfield_10402": null,
+      "customfield_10705": "2|i02z8l:",
+      "customfield_11200": null,
+      "customfield_11500": "{}",
+      "customfield_11600": null,
+      "customfield_11601": null,
+      "customfield_11602": null,
+      "customfield_11800": null,
+      "customfield_11801": null,
+      "customfield_11900": null,
+      "customfield_11901": null,
+      "customfield_11902": null,
+      "customfield_11903": null,
+      "customfield_11904": null,
+      "customfield_11905": null,
+      "customfield_11906": null,
+      "customfield_12001": null,
+      "customfield_12002": null,
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut leo ac nisl malesuada lobortis. Nam bibendum, nunc at faucibus blandit, turpis purus tincidunt mauris, vel vulputate turpis ipsum eu arcu.\r\n\r\nNullam lobortis nec ante bibendum tristique. Aliquam sem ligula, tempor quis dignissim at, semper et tellus. Sed ornare tempus tristique. Quisque eu ante a risus convallis placerat. Nulla pellentesque tincidunt enim ac ultrices. Vivamus imperdiet neque pretium nulla ultricies blandit a at risus. Suspendisse fringilla nibh et nisl feugiat posuere.\r\n\r\n \r\n * bullet 1\r\n * bullet 2\r\n\r\n{code:java}\r\ncode block\r\nline 2 {code}",
+      "duedate": null,
+      "environment": null,
+      "fixVersions": [],
+      "issuelinks": [],
+      "issuetype": {
+        "avatarId": 13401,
+        "description": "",
+        "iconUrl": "https://jira.yours3rver.nl/secure/viewavatar?size=xsmall&avatarId=13401&avatarType=issuetype",
+        "id": "10407",
+        "name": "Spike",
+        "self": "https://jira.yours3rver.nl/rest/api/2/issuetype/10407",
+        "subtask": false
+      },
+      "labels":["UI", "dialogue", "move"],
+      "lastViewed": null,
+      "priority": {
+        "iconUrl": "https://jira.yours3rver.nl/images/icons/priorities/major.svg",
+        "id": "3",
+        "name": "Major",
+        "self": "https://jira.yours3rver.nl/rest/api/2/priority/3"
+      },
+      "progress": {
+        "progress": 0,
+        "total": 0
+      },
+      "project": {
+        "avatarUrls": {
+          "16x16": "https://jira.yours3rver.nl/secure/projectavatar?size=xsmall&pid=12101&avatarId=13411",
+          "24x24": "https://jira.yours3rver.nl/secure/projectavatar?size=small&pid=12101&avatarId=13411",
+          "32x32": "https://jira.yours3rver.nl/secure/projectavatar?size=medium&pid=12101&avatarId=13411",
+          "48x48": "https://jira.yours3rver.nl/secure/projectavatar?pid=12101&avatarId=13411"
+        },
+        "id": "12101",
+        "key": "SBX",
+        "name": "Sandbox",
+        "projectTypeKey": "software",
+        "self": "https://jira.yours3rver.nl/rest/api/2/project/12101"
+      },
+      "reporter": {
+        "active": true,
+        "avatarUrls": {
+          "16x16": "https://jira.yours3rver.nl/secure/useravatar?size=xsmall&ownerId=thijs.kaper&avatarId=12345",
+          "24x24": "https://jira.yours3rver.nl/secure/useravatar?size=small&ownerId=thijs.kaper&avatarId=12345",
+          "32x32": "https://jira.yours3rver.nl/secure/useravatar?size=medium&ownerId=thijs.kaper&avatarId=12345",
+          "48x48": "https://jira.yours3rver.nl/secure/useravatar?ownerId=thijs.kaper&avatarId=12345"
+        },
+        "displayName": "Thijs Kaper",
+        "emailAddress": "thijs.kaper@yours3rver.nl",
+        "key": "thijs.kaper",
+        "name": "thijs.kaper",
+        "self": "https://jira.yours3rver.nl/rest/api/2/user?username=thijs.kaper",
+        "timeZone": "Europe/Amsterdam"
+      },
+      "resolution": null,
+      "resolutiondate": null,
+      "status": {
+        "description": "The issue is open and ready for the assignee to start work on it.",
+        "iconUrl": "https://jira.yours3rver.nl/images/icons/statuses/open.png",
+        "id": "1",
+        "name": "New",
+        "self": "https://jira.yours3rver.nl/rest/api/2/status/1",
+        "statusCategory": {
+          "colorName": "blue-gray",
+          "id": 2,
+          "key": "new",
+          "name": "To Do",
+          "self": "https://jira.yours3rver.nl/rest/api/2/statuscategory/2"
+        }
+      },
+      "subtasks": [],
+      "summary": "Test ms-teams chat notifier",
+      "timeestimate": null,
+      "timeoriginalestimate": null,
+      "timespent": null,
+      "timetracking": {},
+      "updated": "2020-03-12T12:00:21.086+0000",
+      "versions": [],
+      "votes": {
+        "hasVoted": false,
+        "self": "https://jira.yours3rver.nl/rest/api/2/issue/SBX-48/votes",
+        "votes": 0
+      },
+      "watches": {
+        "isWatching": false,
+        "self": "https://jira.yours3rver.nl/rest/api/2/issue/SBX-48/watchers",
+        "watchCount": 0
+      },
+      "worklog": {
+        "maxResults": 20,
+        "startAt": 0,
+        "total": 0,
+        "worklogs": []
+      },
+      "workratio": -1
+    },
+    "id": "167258",
+    "key": "SBX-48",
+    "self": "https://jira.yours3rver.nl/rest/api/2/issue/167258"
+  },
+  "issue_event_type_name": "issue_created",
+  "timestamp": 1584014421256,
+  "user": {
+    "active": true,
+    "avatarUrls": {
+      "16x16": "https://jira.yours3rver.nl/secure/useravatar?size=xsmall&ownerId=thijs.kaper&avatarId=12345",
+      "24x24": "https://jira.yours3rver.nl/secure/useravatar?size=small&ownerId=thijs.kaper&avatarId=12345",
+      "32x32": "https://jira.yours3rver.nl/secure/useravatar?size=medium&ownerId=thijs.kaper&avatarId=12345",
+      "48x48": "https://jira.yours3rver.nl/secure/useravatar?ownerId=thijs.kaper&avatarId=12345"
+    },
+    "displayName": "Thijs Kaper",
+    "emailAddress": "thijs.kaper@yours3rver.nl",
+    "key": "thijs.kaper",
+    "name": "thijs.kaper",
+    "self": "https://jira.yours3rver.nl/rest/api/2/user?username=thijs.kaper",
+    "timeZone": "Europe/Amsterdam"
+  },
+  "webhookEvent": "jira:issue_created"
+}

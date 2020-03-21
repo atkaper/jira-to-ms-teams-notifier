@@ -1,0 +1,90 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: jira-to-ms-teams-notifier
+  labels:
+    run: jira-to-ms-teams-notifier
+    name: jira-to-ms-teams-notifier
+  annotations:
+    devops/purpose: "Connector to convert jira new ticket json to ms-teams json chat message post"
+spec:
+  selector:
+    matchLabels:
+      run: jira-to-ms-teams-notifier
+  revisionHistoryLimit: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 2
+      maxUnavailable: 0  
+  template:
+    metadata:
+      labels:
+        run: jira-to-ms-teams-notifier
+        name: jira-to-ms-teams-notifier
+      annotations:
+        prometheus.io/scrape: "false"
+        devops/purpose: "Connector to convert jira new ticket json to ms-teams json chat message post"
+    spec:
+      containers:
+      - command:
+        - /go/src/github.com/Comcast/eel/bin/eel
+        - -loglevel
+        - info
+        image: YOUR-REGISTRY:443/eel:0.1
+        name: jira-to-ms-teams-notifier
+        resources:
+          limits:
+            cpu: 0.5
+            memory: 850Mi
+          requests:
+            cpu: 200m
+            memory: 400Mi
+#        livenessProbe:
+#          httpGet:
+#            path: /manage/health
+#            port: 80
+#          initialDelaySeconds: 60
+#          timeoutSeconds: 5
+#        readinessProbe:
+#          httpGet:
+#            path: /manage/health
+#            port: 80
+#          initialDelaySeconds: 45
+#          timeoutSeconds: 5
+        env:
+        - name: TZ
+          value: Europe/Amsterdam
+        volumeMounts:
+          - mountPath: /etc/localtime
+            name: tz-config
+          - mountPath: /go/src/github.com/Comcast/eel/config-handlers/tenant1/default.json
+            name: transform
+            subPath: myconfig
+      volumes:
+        - hostPath:
+            path: /usr/share/zoneinfo/Europe/Amsterdam
+          name: tz-config
+        - name: transform
+          configMap:
+            name: jira-to-ms-teams-notifier
+            items:
+            - key: transform-jira-to-ms-teams.json
+              path: myconfig
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    run: jira-to-ms-teams-notifier
+  name: jira-to-ms-teams-notifier
+spec:
+  ports:
+  - targetPort: 8080
+    port: 80
+    protocol: TCP
+  selector:
+    run: jira-to-ms-teams-notifier
+
