@@ -63,7 +63,7 @@ Note: the "test" transformation endpoint in EEL is "/v1/sync/events", which just
 If you want to ADD a new MS-Teams channel to the routing, put it in the
 ```transform-jira-to-ms-teams.json``` script. See description above to find where/how.
 
-To *activate* the change, run ```k8s-deploy-configmap.sh``` (f you are running in kubernetes), and *restart* the running EEL container. Either kill the existing one (by deleting the running pod) to get auto-restart, or run the ```k8s-delete-deploy-service.sh``` and ```k8s-install-deploy-service.sh``` scripts to get the same result.
+To *activate* the change, run ```k8s-deploy-configmap.sh``` (if you are running in kubernetes), and it will also *restart* the running EEL container for you.
 
 If you were running in plain docker, just restart the docker image, and make sure it uses the updated ```transform-jira-to-ms-teams.json``` file.
 
