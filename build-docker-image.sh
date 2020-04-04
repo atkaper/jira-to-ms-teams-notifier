@@ -8,7 +8,7 @@ VERSIONTAG=0.1
 
 # Info about your docker registry server
 YOUR_REGISTRY_URL=
-YOUR_REGISTRY_PASSWORD=
+YOUR_REGISTRY_USER=
 YOUR_REGISTRY_PASSWORD=
 
 # terminate script on (first) error
@@ -20,7 +20,10 @@ then
    cd eel
    git pull
 else
-   git clone https://github.com/Comcast/eel.git
+   # original EEL repo:
+   # git clone https://github.com/Comcast/eel.git
+   # or if you want a smaller image, need a proxy, or need reading of query string from caller url, use my fork:
+   git clone https://github.com/atkaper/eel.git
    cd eel
 fi
 
