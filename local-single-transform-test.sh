@@ -13,15 +13,23 @@ docker run -d --name jira-to-ms-teams-notifier \
 # send test request
 curl -s -X POST --data @example-jira-data.json http://localhost:8080/v1/sync/events >test.out 2>&1
 
+# test health endpoint
+curl -v http://localhost:8080/v1/health/shallow > test2.out 2>&1
+
 # show logs, and stop eel server
 docker logs jira-to-ms-teams-notifier 2>&1 | grep --color -i -e ^ -e error
 docker rm -f jira-to-ms-teams-notifier
 
+echo "========================================================================================================"
+echo "Test health endpoint"
+echo "========================================================================================================"
+cat test2.out
+echo
 echo "========================================================================================================"
 echo "Copy/paste below json in teams playground for preview:  https://messagecardplayground.azurewebsites.net/"
 echo "========================================================================================================"
 cat test.out
 echo
 echo "========================================================================================================"
-rm -rf test.out
+rm -rf test.out test2.out
 
