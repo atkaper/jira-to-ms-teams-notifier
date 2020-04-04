@@ -3,7 +3,9 @@
   "Name": "Send_Jira_To_MsTeams",
   "Info": "Tranform jira ticket json to ms-teams MessageCard json",
   "Active": true,
-  "Match": null,
+  "Match": {
+    "{{/issue_event_type_name}}": "issue_created"
+  },
   "IsMatchByExample": false,
   "TerminateOnMatch": true,
   "CustomProperties": {
